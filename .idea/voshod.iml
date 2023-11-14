@@ -25,6 +25,7 @@
       <list>
         <option value="$MODULE_DIR$/templates" />
         <option value="$MODULE_DIR$/myauth/templates" />
+        <option value="$MODULE_DIR$/voshod/templates" />
       </list>
     </option>
   </component>

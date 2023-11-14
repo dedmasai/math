@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpRequest
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView
@@ -23,3 +24,5 @@ def register_page(request):
     context = {'form': form}
 
     return render(request, 'myauth/register.html', context)
+def welcome(request):
+    return render(request, "myauth/welcome.html")
