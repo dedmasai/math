@@ -1,13 +1,11 @@
 {%  extends "myauth/base.html" %}
         {% block title %}
-        	Login
+        	Результат регистрации
         {% endblock %}
 {% block body %}
-    User Info
-    
     {% if user.is_authenticated %}
-    	Detail
+    	Спасибо, все в порядке.
     {% else %}
-        Is anonymous
+        Возникла проблема, сообщи об этом на уроке.
     {% endif %} 
 {% endblock %}
