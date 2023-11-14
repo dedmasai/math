@@ -1,0 +1,13 @@
+{%  extends "myauth/base.html" %}
+        {% block title %}
+        	Login
+        {% endblock %}
+{% block body %}
+    User Info
+    
+    {% if user.is_authenticated %}
+    	Detail
+    {% else %}
+        Is anonymous
+    {% endif %} 
+{% endblock %}
