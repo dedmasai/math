@@ -22,7 +22,7 @@ def quiz(request:HttpRequest):
     else:
 
        # a=[]
-        for task in taskList.objects.all():
+       # for task in taskList.objects.all():
       #      a.append(task.text)
         form=QuizForm
     context ={
