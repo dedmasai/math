@@ -7,6 +7,6 @@ class QuizForm(forms.Form):
     a3 = forms.IntegerField()
 
 #class QuizItForm(forms.ModelForm):
-#    class Meta
-#        model = quiz
-#        fields = ['answer']
+    class Meta
+        model = quiz
+        fields = ['uAnswer']
