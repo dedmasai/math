@@ -83,7 +83,7 @@ DATABASES = {
 'NAME': 'co53144_voshod',
 'USER': 'co53144_voshod',
 'PASSWORD': 'asdfasdf',
-'HOST': '127.0.0.1',
+'HOST': 'vh424.timeweb.ru',
 'PORT' : '3306',
 }
 }
