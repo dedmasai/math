@@ -16,11 +16,10 @@ def quiz(request:HttpRequest):
         if form.is_valid():
             ans=form.cleaned_data["uAns"]
     else:
-        var=taskList.objects.all()
+        var=taskList.objects.get(varNumber=1)
         form=QuizItForm
     context ={
-        #"var":1
-       # "text":a
+        "var":var
         "form":form
     }
     return render(request,"ariphm/quiz.html", context=context)
