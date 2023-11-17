@@ -10,6 +10,7 @@ def task_list(request:HttpRequest):
     return render(request,"ariphm/task-list.html", context=context)
 
 def quiz(request:HttpRequest):
+
     if request.method == "POST":
         form=QuizForm(request.POST)
         if form.is_valid():
@@ -19,6 +20,8 @@ def quiz(request:HttpRequest):
             a3 = form.cleaned_data["a3"]
             Task.objects.create(name=name,description=a1,answer=int(a2))
     else:
+        tasks=taskList.objects.all()
+
         form=QuizForm
     context ={
         "form":form
