@@ -16,6 +16,7 @@ def quiz(request:HttpRequest):
         if form.is_valid():
             ans=form.cleaned_data["uAns"]
     else:
+        var=taskList.objects.all()
         form=QuizItForm
     context ={
         #"var":1
