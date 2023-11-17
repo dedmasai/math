@@ -20,9 +20,9 @@ def quiz(request:HttpRequest):
             a3 = form.cleaned_data["a3"]
             Task.objects.create(name=name,description=a1,answer=int(a2))
     else:
-        tl=taskList.objects.get(varNumber=1)
-    #    a=[]
-     #   for task in tl:
+
+       # a=[]
+        for task in taskList.objects.get(varNumber=1):
       #      a.append(task.text)
         form=QuizForm
     context ={
