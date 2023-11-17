@@ -1,7 +1,10 @@
 from django.http import HttpRequest
 from django.shortcuts import render
 
-from .models import Task
+from django.contrib.auth import authenticate, login, get_user
+from django.contrib.auth.forms import UserCreationForm
+
+from .models import Task, taskList
 from .forms import QuizForm
 def task_list(request:HttpRequest):
     context ={
@@ -19,8 +22,15 @@ def quiz(request:HttpRequest):
             a3 = form.cleaned_data["a3"]
             Task.objects.create(name=name,description=a1,answer=int(a2))
     else:
+        if request.user.is_authenticated:
+            user = request.user.id
+            tl = taskList.objects.get(varNumber=user)
+        else:
+            redirect('myauth:register')
+    # Do something for anonymous users.
         form=QuizForm
     context ={
+        "user":request.user.username
         "form":form
     }
     return render(request,"ariphm/quiz.html", context=context)
