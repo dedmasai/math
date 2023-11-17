@@ -4,15 +4,29 @@ from ariphm.models import taskList
 from random import randint, shuffle
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        for i in range():
+        varN=200
+        for v in range(varN):
+            n = 1
+            b = randint(11, 99)
+            a = b * randint(1, 10000)
+            d = a // b
+            text=f"Сколько будет {a} разделить на {b}?"
+            task, craeted= taskList.objects.get_or_create(varNumber=v,nubmer=n,text=text,answer=d)
+            self.stdout.write(f"Created task {task.text}")
 
+            n = 2
+            b = randint(5, 20) * 10 ** randint(1, 3)
+            a = b * randint(1, 100) * 10 ** randint(1, 2)
+            d = a // b
+            text = f"Сколько будет {a} разделить на {b}?"
+            task, craeted = taskList.objects.get_or_create(varNumber=v, nubmer=n, text=text, answer=d)
+            self.stdout.write(f"Created task {task.text}")
 
-        task_names=[
-            "Сложение",
-            "Вычитание",
-            "Умножение",
-            "Деление",
-        ]
-        for task_name in task_names:
-            task, craeted= Task.objects.get_or_create(name=task_name)
-            self.stdout.write(f"Created task {task.name}")
+            n = 3
+            b = randint(1, 999)
+            a = randint(0, 9) * 1000 + b
+            c = randint(0, b)
+            d = a - (b - c)
+            text = f"Сколько будет {a} разделить на {b}?"
+            task, craeted = taskList.objects.get_or_create(varNumber=v, nubmer=n, text=text, answer=d)
+            self.stdout.write(f"Created task {task.text}")
