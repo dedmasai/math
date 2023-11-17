@@ -22,6 +22,8 @@ from django.shortcuts import render
 
 
 urlpatterns = [
-    path('myauth/',include('myauth.urls')),
+
+    path('',include('myauth.urls')),
+    path('ariphm/',include('ariphm.urls')),
     path('admin/', admin.site.urls),
 ]

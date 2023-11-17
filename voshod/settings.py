@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-vh!i0%8k_u7eul#z@xc+dxx6qamh$^x+7y6ipfo(k=huu=58f1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'myauth.apps.MyauthConfig',
+    'ariphm.apps.AriphmConfig',
 ]
 
 MIDDLEWARE = [
@@ -79,9 +80,9 @@ WSGI_APPLICATION = 'voshod.wsgi.application'
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.mysql',
-'NAME': 'django_db',
-'USER': 'django_user',
-'PASSWORD': 'Pa$word',
+'NAME': 'co53144_voshod',
+'USER': 'co53144_voshod',
+'PASSWORD': 'asdfasdf',
 'HOST': '127.0.0.1',
 'PORT' : '3306',
 }
@@ -118,3 +119,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/admin/'
+
+STATIC_ROOT = '/home/c/co53144/public_html/static/'
+
+
