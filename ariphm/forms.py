@@ -9,4 +9,4 @@ class QuizForm(forms.Form):
 class QuizItForm(forms.ModelForm):
     class Meta:
         model=AnswerQuiz
-        fields = "__all__"
+        fields = ['uAns']
