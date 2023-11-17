@@ -22,15 +22,10 @@ def quiz(request:HttpRequest):
             a3 = form.cleaned_data["a3"]
             Task.objects.create(name=name,description=a1,answer=int(a2))
     else:
-        if request.user.is_authenticated:
-            user = request.user.id
-            #tl = taskList.objects.all()
-        else:
-            redirect('myauth:register')
-    # Do something for anonymous users.
+
+    tl=taskList.objects.all()
         form=QuizForm
     context ={
-        "user":request.user.username
         "form":form
     }
     return render(request,"ariphm/quiz.html", context=context)
