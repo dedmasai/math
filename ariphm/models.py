@@ -34,13 +34,13 @@ class quiz(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f"Задание(pk={self.pk}, название= {self.name!r})"
-class Answer(models.Model):
+class AnswerQuiz(models.Model):
     date=models.DateTimeField(auto_now_add=True)
-    taskId = models.ForeignKey(taskList,on_delete=models.PROTECT)
-    userID = models.ForeignKey(User, on_delete=models.PROTECT)
-    number = models.IntegerField(default=0)
-    uAnswer = models.IntegerField(default=0)
-    succ = models.IntegerField(default=0)
+    task = models.ForeignKey(taskList,on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    numb = models.IntegerField(default=0)
+    uAns = models.IntegerField(default=0)
+    suc = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f"Задание(pk={self.pk}, название= {self.name!r})"
