@@ -11,7 +11,7 @@ class Command(BaseCommand):
             a = b * randint(1, 10000)
             d = a // b
             text=f"Сколько будет {a} разделить на {b}?"
-            task, craeted= taskList.objects.get_or_create(varNumber=v,nubmer=n,text=text,answer=d)
+            task, craeted= taskList.objects.get_or_create(varNumber=v,number=n,text=text,answer=d)
             self.stdout.write(f"Created task {task.text}")
 
             n = 2
@@ -19,7 +19,7 @@ class Command(BaseCommand):
             a = b * randint(1, 100) * 10 ** randint(1, 2)
             d = a // b
             text = f"Сколько будет {a} разделить на {b}?"
-            task, craeted = taskList.objects.get_or_create(varNumber=v, nubmer=n, text=text, answer=d)
+            task, craeted = taskList.objects.get_or_create(varNumber=v, number=n, text=text, answer=d)
             self.stdout.write(f"Created task {task.text}")
 
             n = 3
@@ -28,5 +28,5 @@ class Command(BaseCommand):
             c = randint(0, b)
             d = a - (b - c)
             text = f"Сколько будет {a} разделить на {b}?"
-            task, craeted = taskList.objects.get_or_create(varNumber=v, nubmer=n, text=text, answer=d)
+            task, craeted = taskList.objects.get_or_create(varNumber=v, number=n, text=text, answer=d)
             self.stdout.write(f"Created task {task.text}")
