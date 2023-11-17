@@ -25,7 +25,7 @@ class taskList(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 class quiz(models.Model):
-    date=models.models.DateTimeField(auto_now_add=True)
+    date=models.DateTimeField(auto_now_add=True)
     taskId = models.ForeignKey(taskList)
     userID = models.ForeignKey(User)
     number = models.IntegerField(default=0)
