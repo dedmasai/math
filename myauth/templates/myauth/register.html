@@ -6,9 +6,9 @@
 <form method="POST" action="">
     {% csrf_token %}
     <h3>Регистрация пятых классов</h3>
-    <h5>Имя</h5>
+    <h5>Имя ребенка</h5>
     {{form.first_name}}
-    <h5>Фамилия</h5>
+    <h5>Фамилия ребенка</h5>
     {{form.last_name}}
     <h5>Логин для входа</h5>
     {{form.username}}
