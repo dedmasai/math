@@ -24,7 +24,7 @@ def quiz(request:HttpRequest):
     else:
         if request.user.is_authenticated:
             user = request.user.id
-            tl = taskList.objects.get(varNumber=user)
+            tl = taskList.objects.all()
         else:
             redirect('myauth:register')
     # Do something for anonymous users.
