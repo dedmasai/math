@@ -7,7 +7,7 @@ class QuizForm(forms.Form):
     a3 = forms.IntegerField()
 
 class QuizItForm(forms.ModelForm):
-    pass
+
     class Meta
         model = quiz
         fields = "__all__"
