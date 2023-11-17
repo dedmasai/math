@@ -24,7 +24,7 @@ def quiz(request:HttpRequest):
 
         form=QuizItForm
     context ={
-        "var":var.first()
+        #"var":var.first()
         "form":form
     }
     return render(request,"ariphm/quiz.html", context=context)
