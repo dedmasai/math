@@ -9,7 +9,7 @@ def task_list(request:HttpRequest):
     }
     return render(request,"ariphm/task-list.html", context=context)
 
-def quiz_f(request:HttpRequest):
+def quiz(request:HttpRequest):
 
     if request.method == "POST":
         form=QuizForm(request.POST)

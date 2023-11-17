@@ -6,7 +6,6 @@ class QuizForm(forms.Form):
     a2 = forms.IntegerField()
     a3 = forms.IntegerField()
 
-class QuizItForm(forms.ModelForm):
-    class Meta
-        model = Quiz
-        fields = "__all__"
+#class QuizItForm(forms.ModelForm):
+ #   class Meta
+  #     fields = "__all__"
