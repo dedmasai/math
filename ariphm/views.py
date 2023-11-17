@@ -24,7 +24,7 @@ def quiz(request:HttpRequest):
     #    a=[]
      #   for task in tl:
       #      a.append(task.text)
-      #  form=QuizForm
+        form=QuizForm
     context ={
         #"var":1
        # "text":a
