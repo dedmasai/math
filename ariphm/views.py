@@ -2,7 +2,7 @@ from django.http import HttpRequest
 from django.shortcuts import render
 
 from .models import Task,taskList
-from .forms import QuizForm
+from .forms import QuizForm,QuizItForm
 def task_list(request:HttpRequest):
     context ={
         "tasks":Task.objects.all(),
@@ -12,19 +12,11 @@ def task_list(request:HttpRequest):
 def quiz(request:HttpRequest):
 
     if request.method == "POST":
-        form=QuizForm(request.POST)
+        form=QuizItForm(request.POST)
         if form.is_valid():
-            name=form.cleaned_data["name"]
-            a1=form.cleaned_data["a1"]
-            a2 = form.cleaned_data["a2"]
-            a3 = form.cleaned_data["a3"]
-            Task.objects.create(name=name,description=a1,answer=int(a2))
+            ans=form.cleaned_data["uAns"]
     else:
-
-       # a=[]
-       # for task in taskList.objects.all():
-      #      a.append(task.text)
-        form=QuizForm
+        form=QuizItForm
     context ={
         #"var":1
        # "text":a
