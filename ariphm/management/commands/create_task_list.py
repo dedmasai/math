@@ -4,6 +4,7 @@ from ariphm.models import taskList
 from random import randint, shuffle
 class Command(BaseCommand):
     def handle(self, *args, **options):
+        for i in range():
 
 
         task_names=[
