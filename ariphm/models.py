@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 
 class Variant(models.Model):
@@ -24,6 +24,13 @@ class taskList(models.Model):
     succ=models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
 
-
+class quiz(models.Model):
+    date=models.models.DateTimeField(auto_now_add=True)
+    taskId = models.ForeignKey(taskList)
+    userID = models.ForeignKey(User)
+    number = models.IntegerField(default=0)
+    uAnswer = models.IntegerField(default=0)
+    succ = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f"Задание(pk={self.pk}, название= {self.name!r})"
