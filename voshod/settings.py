@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+from django.urls import reverse_lazy
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
 
     'myauth.apps.MyauthConfig',
     'ariphm.apps.AriphmConfig',
+    'quiz.apps.QuizConfig'
 ]
 
 MIDDLEWARE = [
@@ -83,7 +86,7 @@ DATABASES = {
 'NAME': 'co53144_voshod',
 'USER': 'co53144_voshod',
 'PASSWORD': 'asdfasdf',
-'HOST': 'vh424.timeweb.ru',
+'HOST': '127.0.0.1',
 'PORT' : '3306',
 }
 }
@@ -118,7 +121,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/admin/'
+LOGIN_REDIRECT_URL=reverse_lazy("myauth:welcome")
 
 STATIC_ROOT = '/home/c/co53144/public_html/static/'
 
