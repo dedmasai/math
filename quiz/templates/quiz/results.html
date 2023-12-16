@@ -1,0 +1,34 @@
+{%  extends "quiz/base.html" %}
+        {% block title %}
+        	Результаты
+        {% endblock %}
+{% block body %}
+<h1>Результаты  </h1> <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+{% for w in wksL %}
+	 <table class="blueTable">
+        <caption> <h1>{{ w.n }}  </h1>  </caption>
+	<tbody>
+    <tr>
+			<td> Номер задания </td>
+            <td> Текст задания </td>
+			<td> Ваш ответ </td>
+            <td> Верный ответ </td>
+			<td> Задание зачтено </td>
+
+	</tr>
+    {% for t in w.t %}
+		<tr>
+			<td> {{ t.n }}</td>
+            <td> {{ t.text }}</td>
+            <td> {{ t.ans }}</td>
+            <td> {{ t.rAns }}</td>
+            <td> {% if t.zachet %}Да
+            	{% else %}Нет
+            {% endif %} </td>
+		</tr>
+    {% endfor %}
+    </table>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{%  extends "quiz/base.html" %}
+        {% block title %}
+        	Журнал
+        {% endblock %}
+{% block body %}
+    <table class="blueTable">
+        <caption> <h1>Журнал  </h1>  </caption>
+	<tbody>
+        <tr>
+			<td> Ученик </td>
+			{% for w in wsAll %}
+				<td> {{w.name}} </td>
+			{% endfor %}
+			<td> Сумма баллов </td>
+		</tr>
+    {% for u in jL %}
+		<tr>
+			<td> {{ u.name }}</td>
+
+
+            {% for wms in u.pl %}
+				<td>
+                    {% for wm in wms %}
+                        {{ wm }}
+                    {% endfor %}
+                </td>
+			{% endfor %}
+            <td> {{ u.bal}}</td>
+		</tr>
+    {% endfor %}
+    </table>
+{% endblock %}
