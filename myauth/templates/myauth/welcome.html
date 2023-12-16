@@ -1,15 +1,19 @@
-{%  extends "myauth/base.html" %}
+{%  extends "quiz/base.html" %}
         {% block title %}
         	Добро пожаловать
         {% endblock %}
 {% block body %}
-    <p>Добрый день. Это ресурс Владимира Эдуардовича Витриченко.</p>
+    <p>Добрый день. Это класс математики.</p>
 
     {% if ia %}
         Вы вошли как {{ f }} {{ l }}
         <h2> Тут можно:</h2>
-        <h3><a href={% url "quiz:quiz"%}>Выполнить задание</a></h3>
+
+        <h3><a href={% url "quiz:work"%}>Выполнить задание</a></h3>
+    <!--    <h3><a href={% url "quiz:res"%}>Посмотреть результаты</a></h3> -->
+        <h3><a href={% url "quiz:main_journal"%}>Журнал</a></h3>
         <h3><a href={% url "myauth:logout"%}>Выйти из системы</a></h3>
+
     {% else%}
         <h2> Тут можно:</h2>
         <h3> <a href={% url "myauth:register"%}>Зарегистрироваться</a></h3>
